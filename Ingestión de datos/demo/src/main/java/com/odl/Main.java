@@ -1,4 +1,4 @@
-package com.odl.binance;
+package com.odl;
 
 public class Main {
     public static void main(String[] args) {
