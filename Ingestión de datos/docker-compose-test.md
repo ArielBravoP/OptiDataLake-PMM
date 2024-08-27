@@ -6,7 +6,7 @@ Programas instalados:
 
 Se crea el archivo de "docker-compose.yml" para realizar la conexión entre estos servicios, este documento va a contener información sobre el servidor local que se creará para hacer las pruebas.
 
-Luego se utiliza el siguiente comando en el terminal de Visual Studio Code:<br>
+Luego se utiliza el siguiente comando en el terminal:<br>
 "docker-compose up"
 
 Y se abren dos terminales CMD de windows, en el primero se pone lo siguiente:<br>
@@ -18,3 +18,13 @@ Y se abren dos terminales CMD de windows, en el primero se pone lo siguiente:<br
 Ahora en el segundo CMD:<br>
 "docker exec -it kafka-broker-1 bash"<br>
 "kafka-console-consumer --bootstrap-server kafka-broker-1:9092 --topic odl --from-beginning" -> Ingresamos como consumidor y podremos ver todo lo que uno escriba en la primer CMD.<br>
+
+### Segunda prueba
+Se ejecuta el Main.java y el Producer.java para simular un productor de Kafka.<br>
+- Primero se ejecuta el código de la carpeta "src/main/java/com/odl/Main.java"<br>
+- Después se inicia el contenedor docker "docker-compose up".
+- Luego se abre un CMD y se ejecutan los comandos: 
+  - "docker exec -it kafka-broker-1 bash"
+  - "kafka-console-consumer --bootstrap-server kafka-broker-1:9092 --topic odl --from-beginning"<br>
+
+Luego desde la ejecución del Main.java, en su terminal, pondremos mensajes con el formato string:string, en donde el primer string será la key y no se mostrará en el consumidor, en cambio, el segundo string después de ":" aparecerá en la CMD del consumidor.
