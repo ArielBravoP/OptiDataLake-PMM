@@ -19,7 +19,7 @@ public class Producer {
     private Producer() {
         try {
             var conf = new Properties();
-            conf.load(new FileReader("Ingestión de datos/producer/src/main/resources/producer.properties"));
+            conf.load(new FileReader("src/main/resources/producer.properties"));
             
             this.kafkaProducer = new KafkaProducer<>(conf);
             
