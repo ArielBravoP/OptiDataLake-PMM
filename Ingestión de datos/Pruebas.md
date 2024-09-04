@@ -27,7 +27,7 @@ Se realiza una prueba creando un [producer](https://github.com/ArielBravoP/OptiD
 - Segundo se ejecuta el código del producer ["producer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/producer/src/main/java/com/odl/Main.java).<br>
 - Luego se ejecuta el código del consumer ["consumer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/consumer/src/main/java/com/odl/Main.java).<br>
 
-Luego desde la ejecución del Main del producer, en su terminal, pondremos mensajes con el formato string:string, en donde el primer argumento será la key y no se mostrará en el consumidor, en cambio, el segundo string después de ":" aparecerá en la CMD del consumidor.
+Luego desde la ejecución del Main del producer, en su terminal, pondremos mensajes con el formato string:string, en donde el primer string será la key y no se mostrará en el consumidor, en cambio, el segundo string después de ":" aparecerá en la CMD del consumidor.
 
 ### Tercera prueba
 Ahora se crearon los proyectos ["producer-log"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/producer-log), ["consumer-log"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/consumer-log) para que nuestro Apache Kafka lea el archivo .log y vaya enviando los mensajes con pausas predefinidas, en este caso se dejó una pausa de 1 segundo.
