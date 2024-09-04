@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.odl.producer</groupId>
-	<artifactId>SpringProviderBinance</artifactId>
+	<artifactId>SpringProducerBinance</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringProviderBinance</name>
+	<name>SpringProducerBinance</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
