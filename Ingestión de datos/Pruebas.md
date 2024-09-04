@@ -21,10 +21,10 @@ Ahora en el segundo CMD:<br>
 "kafka-console-consumer --bootstrap-server kafka-broker-1:9092 --topic odl --from-beginning" -> Ingresamos como consumidor y podremos ver todo lo que uno escriba en la primer CMD.<br>
 
 ### Segunda prueba
-Se realiza una prueba creando un producer y consumer en Apache Kafka, lo que se logró fue enviar mensajes correctamente en el formato "string:string" y que el consumidor lo vea correctamente.<br>
-- Primero se ejecuta el código del producer ["producer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/producer/src/main/java/com/odl/Main.java).<br>
-- Segundo se abre una CMD y se ejecuta el comando: <br>
-  - Se inicia el contenedor docker con "docker-compose up".<br>
+Se realiza una prueba creando un [producer](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/producer) y [consumer](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/consumer) en Apache Kafka, lo que se logró fue enviar mensajes correctamente en el formato "string:string" y que el consumidor lo vea correctamente.<br>
+- Primero se abre una CMD y se ejecuta el comando: <br>
+  - "docker-compose up" -> Se inicia el contenedor docker.<br>
+- Segundo se ejecuta el código del producer ["producer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/producer/src/main/java/com/odl/Main.java).<br>
 - Luego se ejecuta el código del consumer ["consumer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/consumer/src/main/java/com/odl/Main.java).<br>
 
 Luego desde la ejecución del Main del producer, en su terminal, pondremos mensajes con el formato string:string, en donde el primer string será la key y no se mostrará en el consumidor, en cambio, el segundo string después de ":" aparecerá en la CMD del consumidor.
