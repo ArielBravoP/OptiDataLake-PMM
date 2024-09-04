@@ -38,4 +38,6 @@ Con eso tendremos al productor enviando las líneas del .log cada 1 segundo y lo
 
 ### Cuarta prueba
 Se creó el proyecto ["SpringBootKafka"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka) con la finalidad de utilizar SpringBoot y realizar la conexión con Binance. En esta ocasión se logra extraer la información de BTC en intervalos de tiempo, en donde el producer va a estar pidiendo información del precio de la criptomoneda cada 1 segundo por ejemplo, y lo envía para que le llegue al consumer.<br>
-Link de referencia: [Ejemplo Apache Kafka con SpringBoot](https://github.com/UnProgramadorNaceOfficial/spring-apache-kafka)
+Link de referencia: [Ejemplo Apache Kafka con SpringBoot](https://github.com/UnProgramadorNaceOfficial/spring-apache-kafka)<br>
+
+V2: Se crea un nuevo topic llamado "odl-ticks" y se añaden archivos de configuración para que el producer envíe información mediante ticks, es decir, que con cada compra/venta de BTC/USD va a estar enviando un mensaje a ese topic y en paralelo se envían los mensajes cada 1 segundo al topic "odl".
