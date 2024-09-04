@@ -21,13 +21,13 @@ Ahora en el segundo CMD:<br>
 "kafka-console-consumer --bootstrap-server kafka-broker-1:9092 --topic odl --from-beginning" -> Ingresamos como consumidor y podremos ver todo lo que uno escriba en la primer CMD.<br>
 
 ### Segunda prueba
-Se realiza una prueba creando un [producer](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/producer) y [consumer](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/consumer) en Apache Kafka, lo que se logró fue enviar mensajes correctamente en el formato "string:string" y que el consumidor lo vea correctamente.<br>
+Se realiza una prueba creando un producer y consumer en Apache Kafka, lo que se logró fue enviar mensajes correctamente en el formato "string:string" y que el consumidor lo vea correctamente.<br>
 - Primero se ejecuta el código del producer ["producer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/producer/src/main/java/com/odl/Main.java).<br>
 - Segundo se abre una CMD y se ejecuta el comando: <br>
-  - "docker-compose up" -> Se inicia el contenedor docker.<br>
+  - Se inicia el contenedor docker con "docker-compose up".<br>
 - Luego se ejecuta el código del consumer ["consumer/src/main/java/com/odl/Main.java"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/consumer/src/main/java/com/odl/Main.java).<br>
 
-Luego desde la ejecución del Main del producer, en su terminal, pondremos mensajes con el formato string:string, en donde el primer argumento será la key y no se mostrará en el consumidor, en cambio, el segundo string después de ":" aparecerá en la CMD del consumidor.
+Luego desde la ejecución del Main del producer, en su terminal, pondremos mensajes con el formato string:string, en donde el primer string será la key y no se mostrará en el consumidor, en cambio, el segundo string después de ":" aparecerá en la CMD del consumidor.
 
 ### Tercera prueba
 Ahora se crearon los proyectos ["producer-log"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/producer-log), ["consumer-log"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/consumer-log) para que nuestro Apache Kafka lea el archivo .log y vaya enviando los mensajes con pausas predefinidas, en este caso se dejó una pausa de 1 segundo.
@@ -37,4 +37,5 @@ Ahora se crearon los proyectos ["producer-log"](https://github.com/ArielBravoP/O
 Con eso tendremos al productor enviando las líneas del .log cada 1 segundo y lo podremos ver en el terminal de consumer-log
 
 ### Cuarta prueba
-Se creó el proyecto ["SpringBootKafka"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka) con la finalidad de utilizar SpringBoot y realizar la conexión con Binance. En esta ocasión se logra extraer la información de BTC en intervalos de tiempo, en donde el producer va a estar pidiendo información del precio de la criptomoneda cada 1 segundo por ejemplo, y lo envía para que le llegue al consumer.
+Se creó el proyecto ["SpringBootKafka"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka) con la finalidad de utilizar SpringBoot y realizar la conexión con Binance. En esta ocasión se logra extraer la información de BTC en intervalos de tiempo, en donde el producer va a estar pidiendo información del precio de la criptomoneda cada 1 segundo por ejemplo, y lo envía para que le llegue al consumer.<br>
+Link de referencia: [Ejemplo Apache Kafka con SpringBoot](https://github.com/UnProgramadorNaceOfficial/spring-apache-kafka)
