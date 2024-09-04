@@ -38,3 +38,4 @@ Con eso tendremos al productor enviando las líneas del .log cada 1 segundo y lo
 
 ### Cuarta prueba
 Se creó el proyecto ["SpringBootKafka"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka) con la finalidad de utilizar SpringBoot y realizar la conexión con Binance. En esta ocasión se logra extraer la información de BTC en intervalos de tiempo, en donde el producer va a estar pidiendo información del precio de la criptomoneda cada 1 segundo por ejemplo, y lo envía para que le llegue al consumer.
+Link de referencia: [Ejemplo Apache Kafka con SpringBoot](https://github.com/UnProgramadorNaceOfficial/spring-apache-kafka)
