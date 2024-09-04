@@ -3,8 +3,7 @@
 ### Ingestión de datos
 Se comienza a utilizar Apache Kafka, con la intención de simular la llegada de datos en tiempo real con el archivo .log que tenemos.
 
-Se realizaron diversas pruebas para probar la implementación de Apache Kafka, el detalle se encuentra en el archivo "Pruebas.md" dentro de la carpeta Ingestión de datos.
-
+Se realizaron diversas pruebas para probar la implementación de Apache Kafka, el detalle se encuentra en el archivo ["Pruebas.md"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/Pruebas.md) dentro de la carpeta Ingestión de datos.
 
 Para ello se utilizó:
 - Apache Kafka 3.7.1
