@@ -9,6 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.core.KafkaTemplate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -16,23 +19,29 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 public class SpringProducerBinanceApplication {
 
+	private static final Logger logger = LoggerFactory.getLogger(SpringProducerBinanceApplication.class);
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringProducerBinanceApplication.class, args);
 	}
 
 	@Bean
-	CommandLineRunner init(KafkaTemplate<String,String> kafkaTemplate, MarketDataService marketDataService){
+	CommandLineRunner init(KafkaTemplate<String, String> kafkaTemplate, MarketDataService marketDataService) {
 		return args -> {
 			ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 			scheduler.scheduleAtFixedRate(() -> {
 				try {
 					Ticker ticker = marketDataService.getTicker(CurrencyPair.BTC_USDT);
 					String message = "BTC/USD: " + ticker.getLast();
+
+					// Enviar el mensaje a Kafka y registrar el mensaje enviado
 					kafkaTemplate.send("odl", message);
+					logger.info("Mensaje enviado a Kafka: " + message);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}, 0, 1, TimeUnit.SECONDS); // Cambia el intervalo de tiempo
+			}, 0, 1, TimeUnit.SECONDS);
 			// Configuración del tiempo:
 			/*
 			 * Ejemplos de TimeUnit:
@@ -48,3 +57,4 @@ public class SpringProducerBinanceApplication {
 		};
 	}
 }
+

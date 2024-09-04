@@ -24,7 +24,7 @@ public class ConfigBinance {
 
     @Bean
     public Ticker getTicker(MarketDataService marketDataService) throws Exception {
-        // Cambia CurrencyPair.BTC_USDT por el par de divisas que quieras consultar
+        // Se cambia CurrencyPair.BTC_USDT por el par de divisas que se quiera consultar
         return marketDataService.getTicker(CurrencyPair.BTC_USDT);
     }
 }

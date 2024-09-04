@@ -10,7 +10,7 @@ public class ConsumerListener {
 
     private Logger LOGGER = LoggerFactory.getLogger(ConsumerListener.class);
 
-    @KafkaListener(topics = {"odl"}, groupId = "my-group-id")
+    @KafkaListener(topics = {"odl-ticks"}, groupId = "my-group-id")
     public void listener(String message){
         LOGGER.info("Mensaje recibido: " + message);
     }
