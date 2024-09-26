@@ -20,32 +20,34 @@ public class BinanceWebSocketClient extends WebSocketClient {
     }
 
     @Override
-    public void onOpen(ServerHandshake handshakedata) {
-        logger.info("Conexión WebSocket abierta");
-    }
-
-    @Override
     public void onMessage(String message) {
         kafkaTemplate.send("odl-ticks", message); // Envía cada tick al topic "odl-ticks" en Kafka
         logger.info("Mensaje enviado a Kafka: " + message);
     }
 
     @Override
-    public void onClose(int code, String reason, boolean remote) {
-        logger.info("Conexión cerrada: " + reason + ". Código de cierre: " + code);
+    public void onOpen(ServerHandshake handshakedata) {
+        logger.info("Conexión WebSocket abierta. Handshake: " + handshakedata);
     }
+
+    @Override
+    public void onClose(int code, String reason, boolean remote) {
+        logger.info("Conexión WebSocket cerrada. Razón: " + reason + ", Código de cierre: " + code + ", Remoto: " + remote);
+        new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+                reconnect();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
 
     @Override
     public void onError(Exception ex) {
         logger.error("Error en la conexión WebSocket: ", ex);
+        ex.printStackTrace();
     }
 
-    /* Ejemplo main
-    public static void main(String[] args) throws URISyntaxException {
-        String wsURL = "wss://stream.binance.com:9443/ws/btcusdt@trade"; //BTC/USDT
-        KafkaTemplate<String, String> kafkaTemplate = null; // Ejemplo
-        BinanceWebSocketClient client = new BinanceWebSocketClient(new URI(wsURL), kafkaTemplate);
-        client.connect();
-
-    }*/
 }

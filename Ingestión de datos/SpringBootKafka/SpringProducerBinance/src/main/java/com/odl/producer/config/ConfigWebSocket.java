@@ -7,6 +7,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 public class ConfigWebSocket {
@@ -14,16 +16,21 @@ public class ConfigWebSocket {
     @Bean
     public CommandLineRunner startWebSocket(KafkaTemplate<String, String> kafkaTemplate) {
         return args -> {
-            try {
-                BinanceWebSocketClient client = new BinanceWebSocketClient(
-                        new URI("wss://stream.binance.com:9443/ws/btcusdt@trade"), kafkaTemplate);
-                client.connect();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
+            List<String> websocketURIs = Arrays.asList(
+                    "wss://stream.binance.com:9443/ws/btcusdt@trade",  // Para los trades de BTC
+                    "wss://stream.binance.com:9443/ws/ethusdt@trade",  // Para los trades de ETH
+                    "wss://stream.binance.com:9443/ws/xrpusdt@trade"   // Para los trades de XRP
+            );
+
+            // Crear un WebSocket para cada criptomoneda
+            for (String uri : websocketURIs) {
+                try {
+                    BinanceWebSocketClient client = new BinanceWebSocketClient(new URI(uri), kafkaTemplate);
+                    client.connect();
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
             }
         };
     }
-
 }
-
-

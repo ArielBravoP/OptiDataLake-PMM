@@ -17,7 +17,7 @@ public class ConfigTopic {
 
         Map<String, String> configurations = new HashMap<>();
         configurations.put(TopicConfig.CLEANUP_POLICY_CONFIG, TopicConfig.CLEANUP_POLICY_DELETE); // delete y compact (Mantiene el mensaje mas actual)
-        configurations.put(TopicConfig.RETENTION_MS_CONFIG, "86400000"); // Retendrá 1 dia los mensajes antes de ser borrados
+        configurations.put(TopicConfig.RETENTION_MS_CONFIG, "0");
         configurations.put(TopicConfig.SEGMENT_BYTES_CONFIG, "1073741824"); // Tamaño máximo del segmento = 1GB
         //configurations.put(TopicConfig.MAX_MESSAGE_BYTES_CONFIG, "1000000"); // Tamaño max de cada mensaje
 

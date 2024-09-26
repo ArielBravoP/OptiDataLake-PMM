@@ -28,20 +28,23 @@ public class SpringProducerBinanceApplication {
 	@Bean
 	CommandLineRunner init(KafkaTemplate<String, String> kafkaTemplate, MarketDataService marketDataService) {
 		return args -> {
+			// Consulta de precio para BTC por cada segundo
 			ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 			scheduler.scheduleAtFixedRate(() -> {
 				try {
+					/*
+					// Consulta de precio de BTC/USDT
 					Ticker ticker = marketDataService.getTicker(CurrencyPair.BTC_USDT);
 					String message = "BTC/USD: " + ticker.getLast();
 
-					// Enviar el mensaje a Kafka y registrar el mensaje enviado
+					// Enviar el mensaje de precio a Kafka y registrar el mensaje enviado
 					kafkaTemplate.send("odl", message);
-					logger.info("Mensaje enviado a Kafka: " + message);
-
+					logger.info("Precio BTC enviado a Kafka: " + message);
+					*/
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}, 0, 1, TimeUnit.SECONDS);
+			}, 0, 1, TimeUnit.SECONDS); // Cada segundo
 			// Configuración del tiempo:
 			/*
 			 * Ejemplos de TimeUnit:
