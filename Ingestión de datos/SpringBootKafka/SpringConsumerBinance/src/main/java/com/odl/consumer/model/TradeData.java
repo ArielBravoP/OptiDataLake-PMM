@@ -1,7 +1,6 @@
 package com.odl.consumer.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Raw_data")  // Nombre de la colección en MongoDB
@@ -16,9 +15,9 @@ public class TradeData {
     @JsonProperty("t")
     private Long tradeId;      // Mapea el campo "t"
     @JsonProperty("p")
-    private String price;      // Mapea el campo "p"
+    private Double price;      // Mapea el campo "p"
     @JsonProperty("q")
-    private String quantity;   // Mapea el campo "q"
+    private Double quantity;   // Mapea el campo "q"
     @JsonProperty("T")
     private Long tradeTime;    // Mapea el campo "T"
     @JsonProperty("m")
@@ -38,11 +37,11 @@ public class TradeData {
     public Long getTradeId() { return tradeId; }
     public void setTradeId(Long tradeId) { this.tradeId = tradeId; }
 
-    public String getPrice() { return price; }
-    public void setPrice(String price) { this.price = price; }
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
 
-    public String getQuantity() { return quantity; }
-    public void setQuantity(String quantity) { this.quantity = quantity; }
+    public Double getQuantity() { return quantity; }
+    public void setQuantity(Double quantity) { this.quantity = quantity; }
 
     public Long getTradeTime() { return tradeTime; }
     public void setTradeTime(Long tradeTime) { this.tradeTime = tradeTime; }
