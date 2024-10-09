@@ -1,4 +1,4 @@
-package com.odl;
+package com.odl.demo;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -25,7 +25,7 @@ public class SparkDemo {
                 .option("mode", "DROPMALFORMED")
                 .option("columnNameOfCorruptRecord", "_corrupt_record")  // Mostrar datos corruptos en esta columna
                 .schema(schema)  // Proporcionar el esquema explícitamente
-                .json("src/main/java/com/odl/archivo.json");
+                .json("src/main/java/com/odl/demo/archivo.json");
 
         // Mostrar el esquema y las primeras filas del DataFrame
         df.printSchema();
