@@ -23,7 +23,7 @@ public class ConfigTopic {
 
         NewTopic newTopic = TopicBuilder.name("odl")
                 .partitions(2) // Particiones
-                .replicas(2)
+                .replicas(1)
                 .configs(configurations)
                 .build();
 

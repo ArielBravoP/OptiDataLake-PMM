@@ -21,7 +21,7 @@ public class ConsumerListener {
 
     @KafkaListener(topics = {"odl-ticks"}, groupId = "my-group-id")
     public void listener(String message) {
-        LOGGER.info("Mensaje recibido: " + message);
+        //LOGGER.info("Mensaje recibido: " + message);
 
         try {
             // Parsear el mensaje JSON a la clase TradeData

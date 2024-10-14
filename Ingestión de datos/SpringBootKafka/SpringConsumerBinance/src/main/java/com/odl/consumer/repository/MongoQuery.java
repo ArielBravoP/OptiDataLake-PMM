@@ -27,7 +27,7 @@ public class MongoQuery extends JFrame {
     public MongoQuery() {
         try {
             // Conectar a MongoDB
-            String uri = "mongodb://localhost:27017"; // Ajusta según tu configuración
+            String uri = "mongodb://localhost:27017";
             MongoClient mongoClient = MongoClients.create(uri);
             MongoDatabase database = mongoClient.getDatabase("OptiDataLake");
             this.collection = database.getCollection("Raw_data");
@@ -42,7 +42,7 @@ public class MongoQuery extends JFrame {
 
         // Configuración de la ventana
         setTitle("Consulta de Precios en MongoDB");
-        setSize(1000, 700);  // Ajusta el tamaño para acomodar más columnas
+        setSize(1000, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
