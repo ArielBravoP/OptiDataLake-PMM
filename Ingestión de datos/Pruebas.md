@@ -15,6 +15,8 @@ Programas y dependencias relevantes:
 
 **[V2.1]** Se crea el archivo [Dashboard.ipynb](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/Dashboard.ipynb) con la finalidad de desplegar gráficos interactivos y ejemplificar un caso de uso.
 
+**[V2.2]** Se crea el archivo [MongoQueryAnalytics.java](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka/SpringBootSpark/src/main/java/com/odl/SpringBootSpark/test/MongoQueryAnalytics.java) con la finalidad de desplegar una interfaz de consultas simple a la colección de Analytics.
+
 ### Cuarta prueba
 **[V1]** Se creó el proyecto ["SpringBootKafka"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka) con la finalidad de utilizar SpringBoot y realizar la conexión con Binance. En esta ocasión se logra extraer la información de BTC en intervalos de tiempo, en donde el producer va a estar pidiendo información del precio de la criptomoneda cada 1 segundo por ejemplo, y lo envía para que le llegue al consumer.<br>
 Link de referencia: [Ejemplo Apache Kafka con SpringBoot](https://github.com/UnProgramadorNaceOfficial/spring-apache-kafka)<br>
