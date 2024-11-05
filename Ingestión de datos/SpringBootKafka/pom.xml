@@ -32,7 +32,8 @@
 		<module>SpringProducerBinance</module>
 		<module>SpringConsumerBinance</module>
 		<module>SpringBootSpark</module>
-	</modules>
+        <module>SparkKafkaToMongo</module>
+    </modules>
 
 	<properties>
 		<java.version>22</java.version>

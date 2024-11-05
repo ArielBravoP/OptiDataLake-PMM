@@ -29,7 +29,7 @@ public class SpringProducerBinanceApplication {
 	CommandLineRunner init(KafkaTemplate<String, String> kafkaTemplate, MarketDataService marketDataService) {
 		return args -> {
 			// Consulta de precio para BTC por cada segundo
-			ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+			ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(3);
 			scheduler.scheduleAtFixedRate(() -> {
 				try {
 					/*
@@ -44,7 +44,7 @@ public class SpringProducerBinanceApplication {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}, 0, 1, TimeUnit.SECONDS); // Cada segundo
+			}, 0, 100, TimeUnit.MILLISECONDS); // Cada segundo
 			// Configuración del tiempo:
 			/*
 			 * Ejemplos de TimeUnit:

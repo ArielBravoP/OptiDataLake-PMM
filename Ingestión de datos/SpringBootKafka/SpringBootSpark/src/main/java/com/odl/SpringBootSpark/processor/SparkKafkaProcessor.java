@@ -76,5 +76,6 @@ public class SparkKafkaProcessor {
                 .start();
 
         query.awaitTermination();
+        query.stop();
     }
 }
