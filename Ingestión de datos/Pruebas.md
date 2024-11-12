@@ -17,6 +17,8 @@ Programas y dependencias relevantes:
 
 **[V2.2]** Se crea el archivo [MongoQueryAnalytics.java](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka/SpringBootSpark/src/main/java/com/odl/SpringBootSpark/test/MongoQueryAnalytics.java) con la finalidad de desplegar una interfaz de consultas simple a la colección de Analytics.
 
+**[V3]** Se agrega el módulo [SparkKafkaToMongo](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka/SparkKafkaToMongo), el cual utiliza Apache Spark, encargado de limpiar y estructurar los datos en las colecciones de structured_data. También se optimiza el código mejorando la velocidad del consumer y producer. Finalmente se agrega el archivo [MongoQuery.java](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/dd48bfa7eaab2e7c9ececd203ec04b6adff57cf2/Ingesti%C3%B3n%20de%20datos/SpringBootKafka/SpringConsumerBinance/src/main/java/com/odl/consumer/repository/MongoQuery.java) para poder tomar mediciones y realizar benchmarks.
+
 ### Cuarta prueba
 **[V1]** Se creó el proyecto ["SpringBootKafka"](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka) con la finalidad de utilizar SpringBoot y realizar la conexión con Binance. En esta ocasión se logra extraer la información de BTC en intervalos de tiempo, en donde el producer va a estar pidiendo información del precio de la criptomoneda cada 1 segundo por ejemplo, y lo envía para que le llegue al consumer.<br>
 Link de referencia: [Ejemplo Apache Kafka con SpringBoot](https://github.com/UnProgramadorNaceOfficial/spring-apache-kafka)<br>
