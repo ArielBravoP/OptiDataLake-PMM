@@ -1,5 +1,5 @@
 # OptiDataLake-PMM
-Última modificación: [MongoQueryAnalytics.java](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka/SpringBootSpark/src/main/java/com/odl/SpringBootSpark/test/MongoQueryAnalytics.java) <br>
+Última modificación: [SparkKafkaToMongo](https://github.com/ArielBravoP/OptiDataLake-PMM/tree/main/Ingesti%C3%B3n%20de%20datos/SpringBootKafka/SparkKafkaToMongo) <br>
 Detalle de las modificaciones: ["Pruebas.md"](https://github.com/ArielBravoP/OptiDataLake-PMM/blob/main/Ingesti%C3%B3n%20de%20datos/Pruebas.md)
 
 ### Ingestión de datos
